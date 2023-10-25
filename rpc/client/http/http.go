@@ -239,7 +239,7 @@ func (c *baseRPCClient) ABCIQueryWithOptions(
 ) (*ctypes.ResultABCIQuery, error) {
 	result := new(ctypes.ResultABCIQuery)
 	_, err := c.caller.Call(ctx, "abci_query",
-		map[string]interface{}{"path": path, "data": data, "height": opts.Height, "prove": opts.Prove},
+		map[string]interface{}{"path": path, "data": data, "height": opts.Height, "prove": opts.Prove, "permit": opts.Permit},
 		result)
 	if err != nil {
 		return nil, err

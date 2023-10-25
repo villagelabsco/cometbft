@@ -101,7 +101,7 @@ func (c Client) ABCIQueryWithOptions(
 	data bytes.HexBytes,
 	opts client.ABCIQueryOptions,
 ) (*ctypes.ResultABCIQuery, error) {
-	return c.env.ABCIQuery(&rpctypes.Context{}, path, data, opts.Height, opts.Prove)
+	return c.env.ABCIQuery(&rpctypes.Context{}, path, data, opts.Height, opts.Prove, opts.Permit)
 }
 
 func (c Client) BroadcastTxCommit(_ context.Context, tx types.Tx) (*ctypes.ResultBroadcastTxCommit, error) {

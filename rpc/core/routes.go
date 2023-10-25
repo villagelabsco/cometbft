@@ -46,7 +46,7 @@ func (env *Environment) GetRoutes() RoutesMap {
 		"broadcast_tx_async":  rpc.NewRPCFunc(env.BroadcastTxAsync, "tx"),
 
 		// abci API
-		"abci_query": rpc.NewRPCFunc(env.ABCIQuery, "path,data,height,prove"),
+		"abci_query": rpc.NewRPCFunc(env.ABCIQuery, "path,data,height,prove,permit"),
 		"abci_info":  rpc.NewRPCFunc(env.ABCIInfo, "", rpc.Cacheable()),
 
 		// evidence API
